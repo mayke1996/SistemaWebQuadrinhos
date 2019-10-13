@@ -12,10 +12,7 @@ html, body, .capa{
 
 body{
 	
-	background: #3c3535;
-					/*url('imagens/teste.jpg'), 
-					url('imagens/ruido.png'),
-					linear-gradient(10deg, #ff4169, #7c26f8);*/
+	background-color: #3c3535 !important;
 	background-attachment: fixed;
 	font-family: Helvetica, Arial, sans-serif;
 	

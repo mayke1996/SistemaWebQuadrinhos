@@ -23,12 +23,12 @@
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
 
-<body>
+<body class="fundoBody">
 
 	<nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
 
@@ -45,7 +45,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="index.html" class="navbar-brand">
+			<a href="http://localhost:8000" class="navbar-brand">
 				<span class="quandrinhos-logo">QuadrinhosLogo</span>
 			</a>
 
@@ -64,7 +64,7 @@
 					<button type="submit" class="btn btn-primary">Buscar</button>
 				</form>
 				<li class="divisor" role="separator"></li>
-				<li><a href="login.html">Entrar</a></li>
+				<li><a href="http://localhost:8000/login">Entrar</a></li>
 				<li><a href="">Cadastre-se</a></li>
 
 
@@ -84,6 +84,17 @@
 			<h3>Lançamentos</h3>
 		</div>
 
+		{% for info_quadrinhos in listQuadrinhos %}
+   			 <div>
+   			 	<h2>{{ info_quadrinhos.titulo }}</h2> 	 		 
+      	 		<h3>{{ info_quadrinhos.descricao }}</h3>
+      	 		<h3>{{ info_quadrinhos.serie }}</h3>
+      	 		<img style="display: inline;" src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    		</div>
+		{% endfor %}
+
+
+		
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -97,19 +108,22 @@
 
 				<div class="item active">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+					
+    						<img src="{{ quadrinho.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						
+						<div class="carousel-caption">
+						
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-						<div class="carousel-caption">
-							...
-						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
@@ -118,19 +132,20 @@
 				</div>
 				<div class="item">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
@@ -141,26 +156,25 @@
 
 				<div class="item">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
 
 					</div>
-
-
 
 				</div>
 			</div>
@@ -204,68 +218,71 @@
 
 			<div class="item active">
 				<div id="panelQuadrinho" class="col-md-3">
-					<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
 
-				</div>
+					</div>
 			</div>
 			<div class="item">
 				<div id="panelQuadrinho" class="col-md-3">
-					<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
 
-				</div>
+					</div>
 
 			</div>
 
 			<div class="item">
 				<div id="panelQuadrinho" class="col-md-3">
-					<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
 
-				</div>
+					</div>
 
 
 
@@ -306,68 +323,71 @@
 
 			<div class="item active">
 				<div id="panelQuadrinho" class="col-md-3">
-					<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
 
-				</div>
+					</div>
 			</div>
 			<div class="item">
 				<div id="panelQuadrinho" class="col-md-3">
-					<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
 
-				</div>
+					</div>
 
 			</div>
 
 			<div class="item">
 				<div id="panelQuadrinho" class="col-md-3">
-					<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
-					<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
-					<div class="carousel-caption">
-						...
-					</div>
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
 
-				</div>
+					</div>
 
 
 
@@ -410,19 +430,20 @@
 
 				<div class="item active">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
@@ -431,19 +452,20 @@
 				</div>
 				<div class="item">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
@@ -454,26 +476,25 @@
 
 				<div class="item">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
 
 					</div>
-
-
 
 				</div>
 			</div>
@@ -511,19 +532,20 @@
 
 				<div class="item active">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
@@ -532,19 +554,20 @@
 				</div>
 				<div class="item">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
@@ -555,26 +578,25 @@
 
 				<div class="item">
 					<div id="panelQuadrinho" class="col-md-3">
-						<img src="imagens/magneto.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% load static%}
+						<img src="{% static 'quandrinhosApp/imagens/magneto.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/captainAmerica.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/thor.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="imagens/deadpool.jpg" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
 
 					</div>
-
-
 
 				</div>
 			</div>
