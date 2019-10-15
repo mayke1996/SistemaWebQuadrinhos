@@ -83,17 +83,6 @@
 		<div>
 			<h3>Lançamentos</h3>
 		</div>
-
-		{% for info_quadrinhos in listQuadrinhos %}
-   			 <div>
-   			 	<h2>{{ info_quadrinhos.titulo }}</h2> 	 		 
-      	 		<h3>{{ info_quadrinhos.descricao }}</h3>
-      	 		<h3>{{ info_quadrinhos.serie }}</h3>
-      	 		<img style="display: inline;" src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
-    		</div>
-		{% endfor %}
-
-
 		
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -108,25 +97,29 @@
 
 				<div class="item active">
 					<div id="panelQuadrinho" class="col-md-3">
+
+						{% for info_quadrinhos in listQuadrinhos %}
 					
-    						<img src="{{ quadrinho.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
 						<div class="carousel-caption">
 						
 							...
 						</div>
-						<img src="{% static 'quandrinhosApp/imagens/captainAmerica.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						{% endfor %}
+						<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="{% static 'quandrinhosApp/imagens/thor.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
-						<img src="{% static 'quandrinhosApp/imagens/deadpool.jpg'%}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						<div class="carousel-caption">
 							...
 						</div>
+						
 
 					</div>
 				</div>
