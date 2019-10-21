@@ -76,7 +76,7 @@
 
 </nav> <!-- /nav -->
 
-<div class="capa">
+<div class="capa" id="spaceFirstCarrousel">
 
 	<div class="texto-capa">
 
@@ -96,16 +96,20 @@
 			<div class="carousel-inner" role="listbox">
 
 				<div class="item active">
-					<div id="panelQuadrinho" class="col-md-3">
+					<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:4 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -113,16 +117,20 @@
 					</div>
 				</div>
 				<div class="item">
-					<div id="panelQuadrinho" class="col-md-3">
+					<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:13 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -132,16 +140,20 @@
 				</div>
 
 				<div class="item">
-					<div id="panelQuadrinho" class="col-md-3">
+					<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:15 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -170,11 +182,12 @@
 
 
 
+<div class="capa">
 
-<div class="texto-capa">
+	<div class="texto-capa">
 
 	<div>
-		<h4>Recomendados</h4>
+		<h3>Recomendados</h3>
 	</div>
 
 	<div id="carousel-example2-generic" class="carousel slide" data-ride="carousel">
@@ -189,16 +202,20 @@
 		<div class="carousel-inner" role="listbox">
 
 			<div class="item active">
-				<div id="panelQuadrinho" class="col-md-3">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:11 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -207,16 +224,20 @@
 			</div>
 
 			<div class="item">
-				<div id="panelQuadrinho" class="col-md-3">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:17 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -227,16 +248,20 @@
 
 			<div class="item">
 				
-				<div id="panelQuadrinho" class="col-md-3">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:21 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -257,14 +282,17 @@
 		</a>
 	</div>
 
+	</div>
 </div>
 
 <!-- carousel 3 -->
 
+<div class="capa">
+
 <div class="texto-capa">
 
 	<div>
-		<h4>Porque você leu...</h4>
+		<h3>Porque você leu...</h3>
 	</div>
 
 	<div id="carousel-example3-generic" class="carousel slide" data-ride="carousel">
@@ -279,32 +307,40 @@
 		<div class="carousel-inner" role="listbox">
 
 			<div class="item active">
-				<div id="panelQuadrinho" class="col-md-3">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:19 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
 					</div>
 			</div>
 			<div class="item">
-				<div id="panelQuadrinho" class="col-md-3">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:22 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -314,16 +350,20 @@
 			</div>
 
 			<div class="item">
-				<div id="panelQuadrinho" class="col-md-3">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:26 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
@@ -349,182 +389,111 @@
 </div>
 
 </div>
+</div>
 
-<div>
-	<div class="texto-capa" id="spaceCarousel">
+<div class="capa">
 
-		<div>
-			<h4>Em alta</h4>
-		</div>
+<div class="texto-capa">
 
-		<div id="carousel-example4-generic" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-example4-generic" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-example4-generic" data-slide-to="1"></li>
-				<li data-target="#carousel-example4-generic" data-slide-to="2"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-
-			<div class="carousel-inner" role="listbox">
-
-				<div class="item active">
-					<div id="panelQuadrinho" class="col-md-3">
-
-						{% for info_quadrinhos in listQuadrinhos %}
-					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
-						
-						<div class="carousel-caption">
-						
-							...
-						</div>
-
-						{% endfor %}
-						
-
-					</div>
-				</div>
-				<div class="item">
-					<div id="panelQuadrinho" class="col-md-3">
-
-						{% for info_quadrinhos in listQuadrinhos %}
-					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
-						
-						<div class="carousel-caption">
-						
-							...
-						</div>
-
-						{% endfor %}
-						
-
-					</div>
-
-				</div>
-
-				<div class="item">
-					
-					<div id="panelQuadrinho" class="col-md-3">
-
-						{% for info_quadrinhos in listQuadrinhos %}
-					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
-						
-						<div class="carousel-caption">
-						
-							...
-						</div>
-
-						{% endfor %}
-						
-
-					</div>
-
-				</div>
-			</div>
-
-			<!-- Controles -->
-			<a class="left carousel-control" href="#carousel-example4-generic" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#carousel-example4-generic" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-
+	<div>
+		<h3>Mais procurados</h3>
 	</div>
 
-	<!-- carousel 5 -->
+	<div id="carousel-example3-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example4-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example4-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example4-generic" data-slide-to="2"></li>
+		</ol>
 
-	<div class="texto-capa" id="spaceCarousel">
-		<div>
-			<h4>Mais visualizados</h4>
-		</div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
 
-		<div id="carousel-example5-generic" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-example5-generic" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-example5-generic" data-slide-to="1"></li>
-				<li data-target="#carousel-example5-generic" data-slide-to="2"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-
-				<div class="item active">
-					<div id="panelQuadrinho" class="col-md-3">
+			<div class="item active">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:21 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
+
+							{% endif%}
 
 						{% endfor %}
 						
-
 					</div>
-				</div>
-				<div class="item">
-					<div id="panelQuadrinho" class="col-md-3">
+			</div>
+			<div class="item">
+				<div id="panelQuadrinho" class="col-md-2">
 
 						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:20 %}
 					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
 						
-						<div class="carousel-caption">
+							<div class="carousel-caption">
 						
-							...
-						</div>
+								...
+							</div>
 
-						{% endfor %}
-						
-
-					</div>
-
-				</div>
-
-				<div class="item">
-					<div id="panelQuadrinho" class="col-md-3">
-
-						{% for info_quadrinhos in listQuadrinhos %}
-					
-    					<img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
-						
-						<div class="carousel-caption">
-						
-							...
-						</div>
+							{% endif%}
 
 						{% endfor %}
 						
 
 					</div>
 
-				</div>
 			</div>
 
-			<!-- Controles -->
-			<a class="left carousel-control" href="#carousel-example5-generic" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#carousel-example5-generic" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
+			<div class="item">
+				<div id="panelQuadrinho" class="col-md-2">
+
+						{% for info_quadrinhos in listQuadrinhos %}
+
+							{% if forloop.counter|divisibleby:12 %}
+					
+    					    <img src="{{ info_quadrinhos.thumbnail }}" class="img-responsive" id="spaceQuadrinhos" alt="...">
+						
+							<div class="carousel-caption">
+						
+								...
+							</div>
+
+							{% endif%}
+
+						{% endfor %}
+						
+
+					</div>
+
+
+
+			</div>
 		</div>
 
+		<!-- Controles -->
+		<a class="left carousel-control" href="#carousel-example4-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example4-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
 	</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
 </div>

@@ -4,7 +4,7 @@ from .models import info_quadrinhos, usuario
 
 
 def index(request):
-	listQuadrinhos = info_quadrinhos.objects.all()[:4]
+	listQuadrinhos = info_quadrinhos.objects.all()[:200]
 	template = loader.get_template('quandrinhosApp/index.html')
 	context = {
 		'listQuadrinhos': listQuadrinhos,

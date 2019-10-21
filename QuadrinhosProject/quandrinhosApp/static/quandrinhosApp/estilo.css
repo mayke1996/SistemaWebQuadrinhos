@@ -4,7 +4,7 @@
 */
 
 /* ============================= LAYOUT ==============================*/
-html, body, .capa{
+html, body{
 	height: 100%;
 	overflow-x: hidden;
 	
@@ -60,6 +60,7 @@ nav.navbar-transparente{
 .capa{
 	display: table;
 	width: 100%;
+	margin-bottom: 3em;
 }
 .texto-capa{
 	text-align: center;
@@ -119,10 +120,10 @@ nav.navbar-transparente{
 	margin-left: 1em;
 }
 
-#spaceCarousel{
-	padding-top: 2em;
-	padding-bottom: 5em;
+#spaceFirstCarrousel{
+	margin-top: 5.5em;
 }
+
 
 
 /* -- Secao de servicos --*/
