@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- test -->
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
 	<title>Quadrinhos</title>
 	{% load static%}
 	<link rel="icon" href="{% static 'quandrinhosApp/imagens/avengersIcon.png'%}">
-	
+
 	<!---teste -->
 	<!-- Bootstrap -->
 	{% load static %}
@@ -26,78 +27,80 @@
 </head>
 
 <body>
-	
+
 	<nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
-		
+
 		<div class="container">
-			
-			<!-- header -->	
+
+			<!-- header -->
 			<div class="navbar-header">
-				
-				<!-- botão toggle -->	
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navagecao">
+
+				<!-- botão toggle -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#barra-navagecao">
 					<span class="sr-only">alternar navegação</span>
-					<span class="icon-bar"></span>					
-					<span class="icon-bar"></span>					
-					<span class="icon-bar"></span>					
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
 				<a href="http://localhost:8000" class="navbar-brand">
-					<span class="quandrinhos-logo">QuadrinhosLogo</span>					
+					<span class="quandrinhos-logo">QuadrinhosLogo</span>
 				</a>
-				
+
 			</div>
-			
-			<!-- navbar -->		
+
+			<!-- navbar -->
 			<div class="collapse navbar-collapse" id="barra-navagecao">
-				
+
 				<ul class="nav navbar-nav navbar-right">
-					
+
 					<form class="navbar-form navbar-left" role="search">
 
-					<div class="form-group">
-						<input type="text" class="inputSearch form-control" placeholder="Pesquise aqui...">
-					</div>
-					<button type="submit" class="btn btn-primary">Buscar</button>
-					</form>	
-					<li class="divisor" role="separator"></li>		
-					<li><a href="http://localhost:8000/login">Entrar</a></li>						
-					<li><a href="">Cadastre-se</a></li>		
-					
-					
-				</ul>				
-				
-			</div>				
-			
-		</div> <!-- /container -->	
-		
-	</nav> <!-- /nav -->	
-	
+						<div class="form-group">
+							<input type="text" class="inputSearch form-control" placeholder="Pesquise aqui...">
+						</div>
+						<button type="submit" class="btn btn-primary">Buscar</button>
+					</form>
+					<li class="divisor" role="separator"></li>
+					<li><a href="http://localhost:8000/login">Entrar</a></li>
+					<li><a href="">Cadastre-se</a></li>
+
+
+				</ul>
+
+			</div>
+
+		</div> <!-- /container -->
+
+	</nav> <!-- /nav -->
+
 	<div id="spaceLogin" class="capa">
-		
+
 
 		<!-- Login -->
-		<form id="panelLogin">
+		<form id="panelLogin" action="submit" method="POST">
+			{% csrf_token %}
 			<section id="login">
-				
+
 				<div class="container">
-					
+
 					<div class="row">
-						
-						
-						
+
+
+
 						<div id="spaceTitleLogin">
 							<h2>Login</h2>
-						</div>	
+						</div>
 						<div class="form-group" id="spaceFormLogin">
 							<label for="email" class="col-sm-2 control-label">Email</label>
 							<div class="col-sm-10">
-								<input type="email" class="form-control" id="email" placeholder="Email">
+								<input type="email" class="form-control" id="email" placeholder="Digite aqui seu e-mail" name="email">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+							<label for="password" class="col-sm-2 control-label">Senha</label>
 							<div class="col-sm-10">
-								<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								<input type="password" class="form-control" id="password" placeholder="Digite aqui sua senha" name="password">
 							</div>
 						</div>
 						<div class="form-group">
@@ -109,8 +112,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
+						<div>
 							<div class="col-sm-offset-2 col-sm-10" id="btnEntrar">
+								{% for message in messages%}
+								<div class="alert alert-danger">
+									<strong>Erro!</strong> {{ message }}
+								</div>
+								{% endfor %}
 								<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 							</div>
 
@@ -118,65 +126,71 @@
 								<button type="submit" class="btn btn-primary btn-block">Cadastre-se</button>
 							</div>
 						</div>
-					</form>
-				</div>
-				
-			</div>
-			
-		</div>	
-		
+		</form>
+	</div>
+
+	</div>
+
+	</div>
+
 	</section>
 
 
-				<!--<h1>Seus Quadrinhos preferidos</h1>
+	<!--<h1>Seus Quadrinhos preferidos</h1>
 				<a href="" class="btn btn-custom btn-roxo btn-lg">Cadastre-se</a>
 				<a href="" class="btn btn-custom btn-branco btn-lg">Obter o Spotify Premium</a>-->
-				
-			</div>	
-			
-			
-			
-			<!-- Conteúdos -->
 
-			
-			
+	</div>
 
-			<!-- Rodapé -->
-			
-			<footer id="rodapeLogin">
-				
-				<div class="container">
-					<div class="row">
-						
-						<div class="col-md-2">
-							<span>QuadrinhoLogo</span>					
-						</div>
 
-						<div class="rodapeCenter col-md-6">
-							<span>Development by Mayke</span>					
-						</div>
-						
-						<div class="col-md-4">
-							<ul class="nav">
-								{% load static%}
-								<li class="item-rede-social"> <a href="#"><img src="{% static 'quandrinhosApp/imagens/facebook.png'%}"></a></li>
-								<li class="item-rede-social"> <a href="#"><img src="{% static 'quandrinhosApp/imagens/twitter.png'%}"></a></li>
-								<li class="item-rede-social"> <a href="#"><img src="{% static 'quandrinhosApp/imagens/instagram.png'%}"></a></li>																
-							</ul>	
-						</div>
-						
-						
-						<div class="col-md-2"></div>
-					</div> <!-- /row -->			
+
+	<!-- Conteúdos -->
+
+
+
+
+	<!-- Rodapé -->
+
+	<footer id="rodapeLogin">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-2">
+					<span>QuadrinhoLogo</span>
 				</div>
-				
-			</footer>
-			
 
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+				<div class="rodapeCenter col-md-6">
+					<span>Development by Mayke</span>
+				</div>
 
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-		</body>
-		</html>
+				<div class="col-md-4">
+					<ul class="nav">
+						{% load static%}
+						<li class="item-rede-social"> <a href="#"><img
+									src="{% static 'quandrinhosApp/imagens/facebook.png'%}"></a></li>
+						<li class="item-rede-social"> <a href="#"><img
+									src="{% static 'quandrinhosApp/imagens/twitter.png'%}"></a></li>
+						<li class="item-rede-social"> <a href="#"><img
+									src="{% static 'quandrinhosApp/imagens/instagram.png'%}"></a></li>
+					</ul>
+				</div>
+
+
+				<div class="col-md-2"></div>
+			</div> <!-- /row -->
+		</div>
+
+	</footer>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
