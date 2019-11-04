@@ -78,8 +78,13 @@
 
 
 		<!-- Login -->
+
+		{% block content %}
+
 		<form id="panelLogin" action="submit" method="POST">
+
 			{% csrf_token %}
+			
 			<section id="login">
 
 				<div class="container">
@@ -127,6 +132,7 @@
 							</div>
 						</div>
 		</form>
+		{% endblock %}
 	</div>
 
 	</div>
@@ -157,7 +163,7 @@
 			<div class="row">
 
 				<div class="col-md-2">
-					<span>QuadrinhoLogo</span>
+					<span>QuadrinhosLogo</span>
 				</div>
 
 				<div class="rodapeCenter col-md-6">

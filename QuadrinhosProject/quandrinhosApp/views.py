@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import info_quadrinhos, usuario
 
-@login_required
+#@login_required
 def index(request):
 	listQuadrinhos = info_quadrinhos.objects.all()[:200]
 	template = loader.get_template('quandrinhosApp/index.html')
@@ -17,7 +17,7 @@ def index(request):
 	return HttpResponse(template.render(context, request))
 
 def detail(request, id):
-	return HttpResponse("You're looking at question %s.")
+	return HttpResponse("You're looking at question %s.", info_quadrinhos.id)
 
 def login(request):
 	return render(request, 'quandrinhosApp/login.html')
