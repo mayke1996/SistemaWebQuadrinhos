@@ -210,6 +210,14 @@ nav.navbar-transparente{
     text-align: center !important;
 }
 
+#spaceFormCadastro{
+	padding-bottom: 2.5em !important;
+}
+
+#spaceBtnCadastro{
+	padding-top: 4em;
+}
+
 
 /* -- Rodapé --*/
 
@@ -232,6 +240,9 @@ footer{
 	bottom: 0;
 	left: 0;
 	width: -webkit-fill-available;
+}
+#colorRedesSociais:hover{
+	background-color: #000;
 }
 /* ============================= TIPOGRAFIA ==============================*/
 

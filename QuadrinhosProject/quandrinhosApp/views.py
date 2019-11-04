@@ -17,13 +17,13 @@ def index(request):
 	return HttpResponse(template.render(context, request))
 
 def detail(request, id):
-	return HttpResponse("You're looking at question %s." % info_quadrinhos_id)
+	return HttpResponse("You're looking at question %s.")
 
 def login(request):
 	return render(request, 'quandrinhosApp/login.html')
 
-def cadastro(request, id):
-	return HttpResponse("You're voting on question %s." % info_quadrinhos_id)
+def cadastro(request):
+	return render(request, 'quandrinhosApp/cadastro.html')
 
 @csrf_protect
 def submit_login(request):

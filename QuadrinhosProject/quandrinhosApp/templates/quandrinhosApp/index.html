@@ -45,7 +45,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="http://localhost:8000" class="navbar-brand">
+			<a href="/login" class="navbar-brand">
 				<span class="quandrinhos-logo">QuadrinhosLogo</span>
 			</a>
 
@@ -64,8 +64,8 @@
 					<button type="submit" class="btn btn-primary">Buscar</button>
 				</form>
 				<li class="divisor" role="separator"></li>
-				<li><a href="http://localhost:8000/login">Entrar</a></li>
-				<li><a href="">Cadastre-se</a></li>
+				<li><a href="/login">Entrar</a></li>
+				<li><a href="/cadastro">Cadastre-se</a></li>
 
 
 			</ul>
@@ -520,9 +520,9 @@
 			<div class="col-md-4">
 				<ul class="nav">
 					{% load static%}
-					<li class="item-rede-social"> <a href="#"><img src="{% static 'quandrinhosApp/imagens/facebook.png'%}"></a></li>
-					<li class="item-rede-social"> <a href="#"><img src="{% static 'quandrinhosApp/imagens/twitter.png'%}"></a></li>
-					<li class="item-rede-social"> <a href="#"><img src="{% static 'quandrinhosApp/imagens/instagram.png'%}"></a></li>
+					<li class="item-rede-social"> <a href="#" id="colorRedesSociais"><img src="{% static 'quandrinhosApp/imagens/facebook.png'%}"></a></li>
+					<li class="item-rede-social"> <a href="#" id="colorRedesSociais"><img src="{% static 'quandrinhosApp/imagens/twitter.png'%}"></a></li>
+					<li class="item-rede-social"> <a href="#" id="colorRedesSociais"><img src="{% static 'quandrinhosApp/imagens/instagram.png'%}"></a></li>
 				</ul>
 			</div>
 

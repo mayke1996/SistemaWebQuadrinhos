@@ -6,6 +6,6 @@ from quandrinhosApp import views
 urlpatterns = [
 	path('', include('quandrinhosApp.urls')),
     path('admin/', admin.site.urls),
-    path('login/submit', views.submit_login)
+    path('login/', views.submit_login),
     
 ]

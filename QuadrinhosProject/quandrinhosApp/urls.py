@@ -10,7 +10,7 @@ urlpatterns = [
     # ex: /polls/5/results/
     path('home/', views.index, name='index'),
     # ex: /polls/5/vote/
-    path('/cadastro/', views.cadastro, name='cadastro'),
+    path('cadastro/', views.cadastro, name='cadastro'),
 
     path('login/submit/', views.submit_login)
 ]
